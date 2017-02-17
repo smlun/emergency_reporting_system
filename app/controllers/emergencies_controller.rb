@@ -4,10 +4,10 @@ class EmergenciesController < ApplicationController
   end
 
   def show
+    @emergency = Emergency.find(params[:id])
   end
 
   def new
-    @emergency = Emergency.new
   end
 
   def edit
@@ -23,7 +23,7 @@ class EmergenciesController < ApplicationController
   end
 
   private
-  def emergency_params
-    params.require(:emergency).permit(:subject, :category, :content)
-  end
+    def emergency_params
+      params.require(:emergency).permit(:subject, :category, :content)
+    end
 end
