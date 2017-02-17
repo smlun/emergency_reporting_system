@@ -1,3 +1,3 @@
 class Comment < ApplicationRecord
-  belongs_to :Emergency
+  belongs_to :emergency
 end

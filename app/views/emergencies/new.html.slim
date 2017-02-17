@@ -1,5 +1,13 @@
-= bootstrap_form_for @emergency do |comment|
-  = comment.text_field :subject
-  
-  = comment.text_area :content
-  = comment.submit "Submit"
+= bootstrap_form_for @emergency do |emergency|
+  = radio_button_tag(:category, "Man-made Disaster")
+  = label_tag("Man-made Disaster")
+  br
+  = radio_button_tag(:category, "Technological Hazards")
+  = label_tag("Technological Hazards")
+  br
+  = radio_button_tag(:category, "Disease Epicdemic")
+  = label_tag("Disease Epicdemic")
+
+  = emergency.text_field :subject
+  = emergency.text_area :content
+  = emergency.submit "Submit"

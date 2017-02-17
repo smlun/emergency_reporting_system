@@ -5,6 +5,12 @@ h1 = @emergency.subject
 p = @emergency.category
 blockquote = @emergency.content
 
+h2 Comments
+- @emergency.comments.each do |comment|
+ strong = comment.name
+ p says
+ blockquote = comment.content
+
 h2 Send some love!
 = bootstrap_form_for ([@emergency, @emergency.comments.build]) do |comment|
     = comment.text_field :name

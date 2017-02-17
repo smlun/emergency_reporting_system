@@ -1,16 +1,13 @@
 class CommentsController < ApplicationController
   def index
+    @comments = Comment.find(params[:emergency_id])
   end
 
-  def show
-    @emergency = Emergency.last
-    @comment = Comment.new
-    # @comment = @emergency.comments.build
-  end
-
-  def new
+  def create
     @emergency = Emergency.find(params[:emergency_id])
-    @comment = @emergency.comments.create(comment_params)
+    @comment = @emergency.comments.build(comment_params)
+    @comment.emergency = @emergency
+    @comment.save
     redirect_to emergency_path(@emergency)
   end
 
