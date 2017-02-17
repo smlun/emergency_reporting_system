@@ -8,12 +8,16 @@ class EmergenciesController < ApplicationController
   end
 
   def new
+    @emergency = Emergency.new
   end
 
   def edit
   end
 
   def create
+    @emergency = Emergency.new(emergency_params)
+    @emergency.save
+    redirect_to @emergency
   end
 
   def update
