@@ -12,11 +12,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
     @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to emergencies_path, notice: 'Successfully deleted.' }
-      format.json { head :no_content }
-    end
+    redirect_to emergency_path(params[:emergency_id])
   end
 
 private

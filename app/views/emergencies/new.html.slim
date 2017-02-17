@@ -2,15 +2,17 @@
   = link_to "", emergencies_path, class: 'glyphicon glyphicon-chevron-left'
 
 = bootstrap_form_for @emergency do |emergency|
-  = radio_button_tag(:category, "Man-made Disaster")
+  = emergency.radio_button(:category, "Man-made Disaster")
   = label_tag("Man-made Disaster")
   br
-  = radio_button_tag(:category, "Technological Hazards")
+  = emergency.radio_button(:category, "Technological Hazards")
   = label_tag("Technological Hazards")
   br
-  = radio_button_tag(:category, "Disease Epicdemic")
+  = emergency.radio_button(:category, "Disease Epicdemic")
   = label_tag("Disease Epicdemic")
+  
 
   = emergency.text_field :subject
+  / = emergency.select(:category, options_for_select([['Latest News', 'Latest News'], ['Resources', 'Resources'], ['Need Help', 'Need Help']]))
   = emergency.text_area :content
   = emergency.submit "Submit"
