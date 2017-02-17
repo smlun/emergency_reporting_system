@@ -14,7 +14,7 @@ h2 Comments
  p says
  blockquote = comment.content
  .pull-right
-  = link_to "Delete Comment", @comment, method: :delete, data: { confirm: 'Are you sure?'}
+  = link_to "Delete Comment", emergency_comment_path(@emergency.id, comment.id), method: :delete, data: { confirm: 'Are you sure?'}
 
 h2 Send some love!
 = bootstrap_form_for ([@emergency, @emergency.comments.build]) do |comment|
