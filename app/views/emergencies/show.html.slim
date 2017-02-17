@@ -1,3 +1,12 @@
+.row
+  = link_to "", emergencies_path, class: 'glyphicon glyphicon-chevron-left'
+
 h1 = @emergency.subject
 p = @emergency.category
-p = @emergency.content
+blockquote = @emergency.content
+
+h2 Send some love!
+= bootstrap_form_for ([@emergency, @emergency.comments.build]) do |comment|
+    = comment.text_field :name
+    = comment.text_area :content
+    = comment.submit "Send"

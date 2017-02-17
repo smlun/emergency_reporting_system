@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'slim-rails'
 gem 'bootstrap-sass'
-gem 'bootstrap-form'
+gem 'bootstrap_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

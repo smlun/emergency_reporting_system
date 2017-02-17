@@ -12,10 +12,15 @@
  *
  *= require_tree .
  *= require_self
+ *= require rails_bootstrap_forms
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
 //FIX THIS
- .body h1{
-   font-color: #f48342;
+.navbar-header h1{
+   color: #f48342;
+ }
+
+.pull-right h3{
+   color: #f4dc42;
  }
