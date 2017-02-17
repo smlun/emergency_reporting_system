@@ -11,16 +11,20 @@ class EmergenciesController < ApplicationController
     @emergency = Emergency.new
   end
 
-  def edit
-  end
-
   def create
     @emergency = Emergency.new(emergency_params)
     @emergency.save
     redirect_to @emergency
   end
 
+  def edit
+    @emergency = Emergency.find(params[:id])
+  end
+
   def update
+    @emergency = Emergency.find(params[:id])
+    @emergency.update(emergency_params)
+    redirect_to @emergency
   end
 
   def destroy

@@ -6,6 +6,7 @@ p = @emergency.category
 blockquote = @emergency.content
 
 .row.pull-right
+  = link_to "Edit", edit_emergency_path(@emergency)
   = link_to "Remove", @emergency, method: :delete, data: { confirm: 'Are you sure?'}
 
 h2 Comments
