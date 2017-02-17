@@ -5,6 +5,9 @@ h1 = @emergency.subject
 p = @emergency.category
 blockquote = @emergency.content
 
+.row.pull-right
+  = link_to "Remove", @emergency, method: :delete, data: { confirm: 'Are you sure?'}
+
 h2 Comments
 - @emergency.comments.each do |comment|
  strong = comment.name

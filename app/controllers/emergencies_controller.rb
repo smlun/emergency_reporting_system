@@ -24,6 +24,12 @@ class EmergenciesController < ApplicationController
   end
 
   def destroy
+    @emergency = Emergency.find(params[:id])
+    @emergency.destroy
+    respond_to do |format|
+      format.html { redirect_to emergencies_path, notice: 'Successfully deleted.' }
+      format.json { head :no_content }
+    end
   end
 
   private
