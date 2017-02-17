@@ -1,3 +1,6 @@
+.row
+  = link_to "", emergencies_path, class: 'glyphicon glyphicon-chevron-left'
+
 = bootstrap_form_for @emergency do |emergency|
   = radio_button_tag(:category, "Man-made Disaster")
   = label_tag("Man-made Disaster")
