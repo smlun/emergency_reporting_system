@@ -1,1 +1,15 @@
-h1 TEST
+- @emergencies.each do |emergency|
+  .panel.panel-default
+    .panel-heading
+      .panel-title
+        = emergency.subject
+    .panel-body
+      = emergency.content
+      = link_to "More", emergency_path(emergency), class: 'btn btn-info pull-right'
+
+      .button
+    .panel-footer
+      = emergency.created_at
+      .pull-right
+        p = emergency.category
+      
